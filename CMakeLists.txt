@@ -4,9 +4,9 @@ PROJECT(Alleg_Tuto)
 
 SET(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_REQUIRED ON)
-
+#Directirio de Allegro
 SET(ALLEG_LIB_DIR ${CMAKE_SOURCE_DIR}/lib_x86_64/lib)
-
+#Librerias para el proyecto
 SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/liballegro.so )
 SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/liballegro_font.so)
     
