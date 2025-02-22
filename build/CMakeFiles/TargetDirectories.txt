@@ -1,3 +1,6 @@
 /home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/CMakeFiles/Alleg_Tuto.dir
 /home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/CMakeFiles/edit_cache.dir
 /home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/CMakeFiles/rebuild_cache.dir
+/home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/engine/CMakeFiles/STATIC.dir
+/home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/engine/CMakeFiles/edit_cache.dir
+/home/ferjava/WorkSpace/MisJuegos/TutoAlle/build/engine/CMakeFiles/rebuild_cache.dir

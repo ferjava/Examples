@@ -129,6 +129,19 @@ Alleg_Tuto/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Alleg_Tuto.dir/build.make CMakeFiles/Alleg_Tuto.dir/build
 .PHONY : Alleg_Tuto/fast
 
+#=============================================================================
+# Target rules for targets named STATIC
+
+# Build rule for target.
+STATIC: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 STATIC
+.PHONY : STATIC
+
+# fast build rule for target.
+STATIC/fast:
+	$(MAKE) $(MAKESILENT) -f engine/CMakeFiles/STATIC.dir/build.make engine/CMakeFiles/STATIC.dir/build
+.PHONY : STATIC/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +175,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Alleg_Tuto"
+	@echo "... STATIC"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

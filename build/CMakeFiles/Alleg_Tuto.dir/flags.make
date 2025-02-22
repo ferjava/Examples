@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ferjava/WorkSpace/MisJuegos/TutoAlle/lib_x86_64/include
+CXX_INCLUDES = -I/home/ferjava/WorkSpace/MisJuegos/TutoAlle/lib_x86_64/include -I/home/ferjava/WorkSpace/MisJuegos/TutoAlle/engine/include
 
 CXX_FLAGS = -std=gnu++20
 
