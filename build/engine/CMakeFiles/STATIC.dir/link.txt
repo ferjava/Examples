@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSTATIC.a CMakeFiles/STATIC.dir/src/collision/CollisionManager.cpp.o CMakeFiles/STATIC.dir/src/utils/Vec2.cpp.o
-/usr/bin/ranlib libSTATIC.a

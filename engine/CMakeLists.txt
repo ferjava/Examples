@@ -1,6 +1,10 @@
+cmake_minimum_required(VERSION 3.14)
 
-INCLUDE_DIRECTORIES(include/engine)
+project(Fjengine LANGUAGES CXX)
+
 
 FILE(GLOB_RECURSE ENGINE_SOURCES "src/*.cpp")
 
-ADD_LIBRARY(${ENGINE_LIBRARY} STATIC ${ENGINE_SOURCES})
+ADD_LIBRARY(${PROJECT_NAME} ${ENGINE_SOURCES})
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}include/)

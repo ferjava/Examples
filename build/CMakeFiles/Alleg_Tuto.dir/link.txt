@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Alleg_Tuto.dir/link.d CMakeFiles/Alleg_Tuto.dir/main.cpp.o -o Alleg_Tuto  -Wl,-rpath,/home/ferjava/WorkSpace/MisJuegos/TutoAlle/lib_x86_64/lib /home/ferjava/WorkSpace/MisJuegos/TutoAlle/lib_x86_64/lib/liballegro.so /home/ferjava/WorkSpace/MisJuegos/TutoAlle/lib_x86_64/lib/liballegro_font.so

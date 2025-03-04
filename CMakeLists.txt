@@ -9,20 +9,38 @@ SET(ALLEG_LIB_DIR ${CMAKE_SOURCE_DIR}/lib_x86_64/lib)
 #Librerias para el proyecto
 SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/liballegro.so )
 SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/liballegro_font.so)
-    
+SET(ALLEGRO_IMAGE_LIBRARY ${ALLEG_LIB_DIR}/liballegro_image.so)
 
 
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/lib_x86_64/include)
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/engine/include)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/source/include)
+
+SET (GAME_SOURCE source/aLogo.cpp
+                        main.cpp)
 
 ADD_SUBDIRECTORY(engine)
 
-ADD_EXECUTABLE(${PROJECT_NAME} main.cpp)
+SET(ENGINE_LIBRARY Fjengine)
+
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${GAME_SOURCE})
+
+#Copiamos los archivos de Imagenes para el JUego
+SET(CONTENT_SOURCE_DIR "${CMAKE_SOURCE_DIR}/Content")
+SET(CONTENT_DES_DIR "${CMAKE_BINARY_DIR}/Content")
+
+add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CONTENT_SOURCE_DIR} ${CONTENT_DES_DIR}
+    )
+#############################
 
 TARGET_LINK_LIBRARIES(
     ${PROJECT_NAME} ${ENGINE_LIBRARY}
-    ${ALLEGRO_LIBRARY} ${ALLEGRO_FONT_LIBRARY}
+    ${ALLEGRO_LIBRARY} ${ALLEGRO_FONT_LIBRARY} ${ALLEGRO_IMAGE_LIBRARY}
     )
 
 
