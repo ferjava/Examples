@@ -6,10 +6,25 @@ SET(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_REQUIRED ON)
 #Directirio de Allegro
 SET(ALLEG_LIB_DIR ${CMAKE_SOURCE_DIR}/lib_x86_64/lib)
+
+
 #Librerias para el proyecto
 SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/liballegro.so )
 SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/liballegro_font.so)
 SET(ALLEGRO_IMAGE_LIBRARY ${ALLEG_LIB_DIR}/liballegro_image.so)
+
+IF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux")
+    SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/liballegro.so )
+    SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/liballegro_font.so)
+    SET(ALLEGRO_IMAGE_LIBRARY ${ALLEG_LIB_DIR}/liballegro_image.so)
+ELSEIF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
+    SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/allegro-5.2.dll )
+    SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/allegro_font-5.2.dll)
+ELSE()
+    MESSAGE(FATAL_ERROR "Unsupported platform: ${CMAKE_HOST_SYSTEM_NAME}")
+ENDIF()
+
+
 
 
 
@@ -36,11 +51,27 @@ add_custom_command(
     COMMAND ${CMAKE_COMMAND} -E copy_directory
     ${CONTENT_SOURCE_DIR} ${CONTENT_DES_DIR}
     )
-#############################
+
+IF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
+    ADD_CUSTOM_COMMAND(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${ALLEG_LIB_DIR}/allegro-5.2.dll"
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
+
+    ADD_CUSTOM_COMMAND(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${ALLEG_LIB_DIR}/allegro_font-5.2.dll"
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
+    MESSAGE(${ALLEGRO_LIBRARY} ${ALLEGRO_FONT_LIBRARY})
+ENDIF()
+
 
 TARGET_LINK_LIBRARIES(
     ${PROJECT_NAME} ${ENGINE_LIBRARY}
     ${ALLEGRO_LIBRARY} ${ALLEGRO_FONT_LIBRARY} ${ALLEGRO_IMAGE_LIBRARY}
     )
-
 
