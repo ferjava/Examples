@@ -1,4 +1,4 @@
-#include "Rectangle.h"
+#include "utils/Rectangle.h"
 
 Rectangle::Rectangle(float x_, float y_, float w_, float h_) 
         : x(x_), y(y_), w(w_), h(h_) {}

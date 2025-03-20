@@ -13,15 +13,15 @@ void aLogo::Init()
         }
 
         _size.Height = al_get_bitmap_height(_image);
-        _size.With   = al_get_bitmap_width(_image);
+        _size.Width   = al_get_bitmap_width(_image);
 }
 
 void aLogo::Draw(ALLEGRO_BITMAP* bitmap_padre)
 {
      Fj::Size size_padre ;
      size_padre.Height = al_get_bitmap_height(bitmap_padre);
-     size_padre.With = al_get_bitmap_width(bitmap_padre);
-     _pos.x = al_get_bitmap_width(bitmap_padre)*0.5 - _size.With*0.5;
+     size_padre.Width = al_get_bitmap_width(bitmap_padre);
+     _pos.x = al_get_bitmap_width(bitmap_padre)*0.5 - _size.Width*0.5;
      _pos.y = al_get_bitmap_height(bitmap_padre)*0.5 - _size.Height*0.5;
     al_draw_bitmap(_image,_pos.x,_pos.y,0);
 

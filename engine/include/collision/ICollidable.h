@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Rectangle.h"
+#include "utils/Rectangle.h"
 
 class ICollidable {
 public:
