@@ -1,0 +1,1 @@
+ engine/libFjengine.a "C:/Users/fgsj/Workspace/Examples-1/lib_x86_64/lib/allegro-5.2.dll" "C:/Users/fgsj/Workspace/Examples-1/lib_x86_64/lib/allegro_font-5.2.dll" "C:/Users/fgsj/Workspace/Examples-1/lib_x86_64/lib/allegro_image-5.2.dll" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
