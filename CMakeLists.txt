@@ -20,6 +20,7 @@ IF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux")
 ELSEIF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
     SET(ALLEGRO_LIBRARY ${ALLEG_LIB_DIR}/allegro-5.2.dll )
     SET(ALLEGRO_FONT_LIBRARY ${ALLEG_LIB_DIR}/allegro_font-5.2.dll)
+    SET(ALLEGRO_IMAGE_LIBRARY ${ALLEG_LIB_DIR}/allegro_image-5.2.dll)
 ELSE()
     MESSAGE(FATAL_ERROR "Unsupported platform: ${CMAKE_HOST_SYSTEM_NAME}")
 ENDIF()
@@ -66,6 +67,12 @@ IF(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")
         "${ALLEG_LIB_DIR}/allegro_font-5.2.dll"
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
     )
+      ADD_CUSTOM_COMMAND(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${ALLEG_LIB_DIR}/allegro_image-5.2.dll"
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+      )
     MESSAGE(${ALLEGRO_LIBRARY} ${ALLEGRO_FONT_LIBRARY})
 ENDIF()
 
