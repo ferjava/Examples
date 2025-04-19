@@ -1,3 +1,0 @@
-E:\msys64\clang64\bin\cmake.exe -E rm -f CMakeFiles\Alleg_Tuto.dir/objects.a
-E:\msys64\clang64\bin\llvm-ar.exe qc CMakeFiles\Alleg_Tuto.dir/objects.a @CMakeFiles\Alleg_Tuto.dir\objects1.rsp
-E:\msys64\clang64\bin\clang++.exe -g -Wl,--whole-archive CMakeFiles\Alleg_Tuto.dir/objects.a -Wl,--no-whole-archive -o Alleg_Tuto.exe -Wl,--out-implib,libAlleg_Tuto.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Alleg_Tuto.dir\linkLibs.rsp

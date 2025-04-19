@@ -1,9 +1,10 @@
+#pragma once
 #ifndef __ENGINE_HPP
 #define __ENGINE_HPP
 
 #include "base/Actor.hpp"
 #include "base/ActorManager.hpp"
-
+#include "base/Game.hpp"
 #include "base/IApp.hpp"
 
 

@@ -1,2 +1,0 @@
-E:\msys64\clang64\bin\llvm-ar.exe qc libFjengine.a CMakeFiles/Fjengine.dir/src/Rectangle.cpp.obj CMakeFiles/Fjengine.dir/src/base/Actor.cpp.obj CMakeFiles/Fjengine.dir/src/collision/CollisionManager.cpp.obj CMakeFiles/Fjengine.dir/src/utils/Vec2.cpp.obj
-E:\msys64\clang64\bin\llvm-ranlib.exe libFjengine.a
